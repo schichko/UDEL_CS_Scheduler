@@ -25,7 +25,11 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "auth-cas-mod": "latest",
+    "timers": "^0.1.1",
+    "events": "^3.0.0",
+    "stream": "^0.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",

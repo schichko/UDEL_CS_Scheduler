@@ -17,12 +17,12 @@ export class PlanComponent implements OnInit {
   }
 
   getPlan(planID: number) {
-    return this.http.get(`http://localhost:8080/api/plans/${planID}`).subscribe(plan => this.semesterPlan = plan);
+    return this.http.get(`http://localhost:3002/api/plans/${planID}`).subscribe(plan => this.semesterPlan = plan);
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => this.planID = params['planID']);
-
+    console.log("getting plan");
     this.getPlan(this.planID);
   }
 

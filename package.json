@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "run-p startweb",
+    "start": "run-p startserver startweb",
+    "startserver": "node server.js",
     "startweb": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -20,17 +21,16 @@
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jwt-decode": "^2.2.0",
     "mongoose": "^5.7.1",
-    "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "rxjs": "~6.4.0",
+    "stream": "~0.0.2",
+    "timers": "~0.1.1",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "auth-cas-mod": "latest",
-    "timers": "^0.1.1",
-    "events": "^3.0.0",
-    "stream": "^0.0.2"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",

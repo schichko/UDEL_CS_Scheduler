@@ -1,5 +1,15 @@
 <div id="user_container">
-  <h2>{{_fullname}}</h2>
-  <h3>{{_user}}@udel.edu</h3>
-  <h4>{{_major}}</h4>
+  <h2>
+    {{ _token["cas:serviceResponse"]["cas:authenticationSuccess"]["cas:firstname"]["_text"] }}
+    {{ _token["cas:serviceResponse"]["cas:authenticationSuccess"]["cas:lastname"]["_text"] }}
+  </h2>
+  <h3>
+    {{ _token["cas:serviceResponse"]["cas:authenticationSuccess"]["cas:user"]["_text"] }}
+    @udel.edu
+  </h3>
+  <h4>
+    {{ _token["cas:serviceResponse"]["cas:authenticationSuccess"]["cas:studentclassification"]["_text"] }}
+    ,
+    {{ _token["cas:serviceResponse"]["cas:authenticationSuccess"]["cas:major"]["_text"] }}
+  </h4>
 </div>

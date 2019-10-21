@@ -1,4 +1,22 @@
-<div class="card-container">
-  <app-term semester=1 plan=1 class="card"></app-term>
-  <app-term semester=2 plan=1 class="card"></app-term>
+<app-concentration-dropdown></app-concentration-dropdown>
+<div class="plan">
+  <div class="card-container">
+    <app-term [classes]="semesterPlan[0].semester_1" class="card"></app-term>
+    <app-term [classes]="semesterPlan[0].semester_2" class="card"></app-term>
+  </div>
+
+  <div class="card-container">
+    <app-term [classes]="semesterPlan[0].semester_3" class="card"></app-term>
+    <app-term [classes]="semesterPlan[0].semester_4" class="card"></app-term>
+  </div>
+
+  <div class="card-container">
+    <app-term [classes]="semesterPlan[0].semester_5" class="card"></app-term>
+    <app-term [classes]="semesterPlan[0].semester_6" class="card"></app-term>
+  </div>
+
+  <div class="card-container">
+    <app-term [classes]="semesterPlan[0].semester_7" class="card"></app-term>
+    <app-term [classes]="semesterPlan[0].semester_8" class="card"></app-term>
+  </div>
 </div>

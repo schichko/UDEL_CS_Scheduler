@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as xml2js from 'xml2js';
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-user',
@@ -10,58 +9,36 @@ import * as xml2js from 'xml2js';
 
 export class UserComponent implements OnInit {
 
-  private _token: any;
+  public _token: any = [];
+  public _userdata: any;
   public _user: any;
   public _fullname: any;
   public _major: any;
 
-  constructor(private _http: HttpClient) {
-    this.getToken();
+  constructor() {
   }
 
-  public getToken() {
-    this._http.get('/assets/example_cas_token.xml',
-      {
-        headers: new HttpHeaders()
-          .set('Content-Type', 'text/xml')
-          .append('Access-Control-Allow-Methods', 'GET')
-          .append('Access-Control-Allow-Origin', '*')
-          .append('Access-Control-Allow-Headers', "Access-Control-Allow-Headers, Access-Control-Allow-Origin, Access-Control-Request-Method"),
-        responseType: 'text'
-      })
-      .subscribe(async (data) => {
-        await this.parseToken(data)
-      });
+  public async getToken(name: string) {
+    let ca: Array<string> = document.cookie.split(';');
+    let caLen: number = ca.length;
+    let cookieName = `${name}=`;
+    let c: string;
+
+    for (let i: number = 0; i < caLen; i += 1) {
+      c = ca[i].replace(/^\s+/g, '');
+      if (c.indexOf(cookieName) == 0) {
+        this._token = c.substring(cookieName.length, c.length);
+      }
+    }
   }
 
-  public async parseToken(data) {
-    let casToken: any;
-    var parser = new xml2js.Parser({
-      trim: true,
-      explicitArray: false
-    });
-    await parser.parseStringPromise(data).then(function (result) {
-      var response = result["cas:serviceResponse"];
-      casToken = response["cas:authenticationSuccess"];
-    })
-      .catch(function (err) {
-        // Failed
-        console.log("Unable to retrieve user token from CAS")
-      });
-    this._token = casToken;
+  public decodeToken() {
+    this._token = jwt_decode(this._token);
     console.log(this._token);
-
-    this._user = this._token["cas:user"];
-    console.log(this._user);
-
-    this._fullname = this._token["cas:fullname"];
-    console.log(this._fullname);
-
-    this._major = this._token["cas:major"];
-    console.log(this._major);
   }
 
   ngOnInit() {
-  }
-
+    this.getToken('cas_user');
+    this.decodeToken();
+  };
 }

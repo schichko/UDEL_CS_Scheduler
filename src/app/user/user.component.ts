@@ -9,7 +9,7 @@ import * as jwt_decode from 'jwt-decode';
 
 export class UserComponent implements OnInit {
 
-  private _token: any = [];
+  public _token: any = [];
   public _userdata: any;
   public _user: any;
   public _fullname: any;

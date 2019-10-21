@@ -6,26 +6,25 @@ import { PlanComponent } from './plan/plan.component'
 import { environment } from 'src/environments/environment'
 import { AuthGuard } from './auth.guard'
 
-let routes: Routes = [];
+const productionRoutes: Routes = [
+  { path: 'term', component: TermComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'plan/:planID', component: PlanComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuard] }
+];
 
-if (environment.production) {
-  routes = [
-    { path: 'term', component: TermComponent, canActivate: [AuthGuard] },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'plan/:planID', component: PlanComponent, canActivate: [AuthGuard] },
-    { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuard] }
-  ];
-} else {
-  routes = [
-    { path: 'term', component: TermComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'plan/:planID', component: PlanComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
-  ];
-}
+const developmentRoutes: Routes = [
+  { path: 'term', component: TermComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'plan/:planID', component: PlanComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
+
+let currentRoutes = (environment.production) ? productionRoutes : developmentRoutes;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(currentRoutes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

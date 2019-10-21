@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthCasModModule } from 'auth-cas-mod';
 import { environment } from '../environments/environment';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { EmptyTermComponent } from './empty-term/empty-term.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { environment } from '../environments/environment';
     PlanComponent,
     ConcentrationDropdownComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserInfoComponent,
+    EmptyTermComponent
   ],
   imports: [
     HttpClientModule,
@@ -34,6 +38,7 @@ import { environment } from '../environments/environment';
     AuthCasModModule.forRoot(environment)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EmptyTermComponent]
 })
 export class AppModule { }

@@ -33,9 +33,7 @@ import { EmptyTermComponent } from './empty-term/empty-term.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    AuthCasModModule,
-    AuthCasModModule.forRoot(environment)
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

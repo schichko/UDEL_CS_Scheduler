@@ -1,9 +1,35 @@
-h1,
+@font-face {
+  font-family: VanguardDemiBold;
+  src: url(./assets/Vanguard-CF-Demi-Bold.otf);
+}
+
+@font-face {
+  font-family: GreycliffBold;
+  src: url(./assets/Greycliff-CF-Bold.otf);
+}
+
+@font-face {
+  font-family: Greycliff;
+  src: url(./assets/Greycliff-CF-Regular.otf);
+}
+
+h1 {
+  color: white;
+  font-family: VanguardDemiBold;
+  margin: 0;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 8px 0;
-  color: white;
+  color: #00539f;
+  font-family: GreycliffBold;
+  margin: 0;
+  line-height: 1.3em;
+}
+
+p {
+  font-family: Greycliff;
 }

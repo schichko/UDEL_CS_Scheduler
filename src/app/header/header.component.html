@@ -19,13 +19,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light navWrapper">
-  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse"
-    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" id="nav-bar">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" routerLink="" routerLinkActive="active">Home<span class="sr-only">(current)</span></a>
@@ -34,7 +28,7 @@
         <a class="nav-link" routerLink="user-info" routerLinkActive="active">My Info<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="plan" routerLinkActive="active">Plans<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="plan/Cybersecurity" routerLinkActive="active">Cybersecurity<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>

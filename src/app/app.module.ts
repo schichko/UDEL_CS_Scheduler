@@ -11,6 +11,10 @@ import { PlanComponent } from './plan/plan.component';
 import { ConcentrationDropdownComponent } from './concentration-dropdown/concentration-dropdown.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthCasModModule } from 'auth-cas-mod';
+import { environment } from '../environments/environment';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { EmptyTermComponent } from './empty-term/empty-term.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { FooterComponent } from './footer/footer.component';
     PlanComponent,
     ConcentrationDropdownComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserInfoComponent,
+    EmptyTermComponent
   ],
   imports: [
     HttpClientModule,
@@ -30,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EmptyTermComponent]
 })
 export class AppModule { }

@@ -3,10 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  app_url: 'https://planner.cis.udel.edu/', // Example: https://myapp.com
-  cas_url: 'https://cas.nss.udel.edu/cas', // Example: https://mycas.com/cas
-  cas_validate_url: 'https://cas.nss.udel.edu/cas/serviceValidate' // Example: https://mycas.com/cas/serviceValidate
+  production: false
 };
 
 /*

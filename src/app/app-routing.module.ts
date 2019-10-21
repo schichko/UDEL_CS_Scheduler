@@ -6,7 +6,6 @@ import { PlanComponent } from './plan/plan.component'
 
 
 // UNCOMMENT AND USE THIS WHEN IN PRODUCTION FOR AUTHENTICATION
-// - Does not have the AuthGuard
 /*
 import { AuthGuard } from './auth.guard'
 const routes: Routes = [
@@ -18,12 +17,14 @@ const routes: Routes = [
 */
 
 // USE THIS WHEN IN DEV
+
 const routes: Routes = [
   { path: 'term', component: TermComponent },
   { path: 'home', component: HomeComponent },
   { path: 'plan/:planID', component: PlanComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

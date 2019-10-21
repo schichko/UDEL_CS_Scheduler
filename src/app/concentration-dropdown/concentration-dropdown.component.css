@@ -1,13 +1,13 @@
-
-p{
-    background-color: #00a0df;
-    width: 100%;
-    text-align: center;
-}
-select{
-background-color: #FFDF00;
-}
-option{
-background-color: #FFDF00;    
+select {
+  background-color: #FFDF00;
 }
 
+option {
+  background-color: #FFDF00;
+}
+
+#concentrationText {
+  color: white;
+  font-size: 1.25em;
+  text-align: center;
+}

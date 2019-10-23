@@ -30,6 +30,13 @@ export class UserInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var end = new Date().getFullYear();
+    var start = new Date().getFullYear() -15;
+    var options = "";
+    for(var year = end ; year >= start; year--){
+      options += "<option>"+ year +"</option>";
+    }
+    document.getElementById("year").innerHTML = options;
   }
 
   buttonPop(inputYear: string, inputTerm: string) {

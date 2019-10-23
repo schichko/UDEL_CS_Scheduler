@@ -17,15 +17,26 @@
 .year-data{
   margin: 20px;
   padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .card-container {
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
   display: flex;
   justify-content: center;
 }
   
 .drop-down {
   display: inline;
+  margin-left: 2%;
+  /* margin-right: 2%; */
+}
+
+.margin-spacing{
+  margin-left:2%;
 }
 
 .option-select:before {
@@ -34,8 +45,8 @@
 }
 
 .submitButton {
+  display: flex;
   justify-content: center;
-  align-items: center; 
   margin: 20px;
 }
 
@@ -49,5 +60,5 @@
 }
 
 .buttonPos{
-text-align: center;
+  text-align: center;
 }

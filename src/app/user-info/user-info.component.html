@@ -1,10 +1,8 @@
+
 <div id="semesterContainer" class="card-container" *ngFor="let element of terms">
     <!-- <ng-container *ngComponentOutlet="element" ></ng-container> -->
     <app-empty-term  semsester={{semesterCount}} startYear={{currentUserYear}} term ={{currentUserTerm}} class="card" (notify)="handleNotify($event)"></app-empty-term>
 </div>
-
-
-<!--div #parent will contain our child components -->
 
 
 <td class= "year-data"> 
@@ -14,8 +12,10 @@
             <option value="Spring">Spring</option>
             <option value="Summer">Summer</option>
     </select> 
-    Year: <input #myYear type="text" id="year" maxlength="4">
-    <button id = "newSemester" (click)= 'buttonPop(myYear.value,myTerm.value)'>Add Semester</button>
+    <select #myYear id="year" class = "margin-spacing"></select>
+    <button id = "newSemester" (click)= 'buttonPop(myYear.value,myTerm.value)' class="margin-spacing">Add Semester</button>
 </td>
 
-<button id = "submitUserInfo" class = "submitButton" (click) ='submitData()'>Submit</button>
+<div class = "submitButton">
+    <button id = "submitUserInfo" (click) ='submitData()'>Submit</button>
+</div>

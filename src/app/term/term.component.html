@@ -9,12 +9,19 @@
    <tbody>
      <tr *ngFor="let class of classes;let classNum = index">
        <th scope="row">{{classNum+1}}</th>
-       <td>
-         {{ class.class }}
-       </td>
-       <td class="creditCount">
-         {{ class.credit }}
-       </td>
+      <td *ngIf="!isArray(class)">
+        {{ class.class }}
+      </td>
+      <td class="creditCount" *ngIf="!isArray(class)">
+        {{ class.credit }}
+      </td>
+
+      <td *ngIf="isArray(class)">
+        {{ class[0].class }} <em>OR</em> {{ class[1].class }}
+      </td>
+      <td class="creditCount" *ngIf="isArray(class)">
+        {{ class[0].credit }}
+      </td>
      </tr>
    </tbody>
  </table>

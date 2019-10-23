@@ -18,4 +18,8 @@ export class TermComponent implements OnInit {
     console.log(this.classes);
   }
 
+  isArray(obj : any ) {
+    return Array.isArray(obj)
+  }
+
 }

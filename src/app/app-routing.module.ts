@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomeComponent } from './home/home.component'
 import { TermComponent } from './term/term.component'
 import { PlanComponent } from './plan/plan.component'
+import { WhatifComponent } from './whatif/whatif.component'
 
 
 // UNCOMMENT AND USE THIS WHEN IN PRODUCTION FOR AUTHENTICATION
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'term', component: TermComponent },
   { path: 'home', component: HomeComponent },
   { path: 'plan/:planID', component: PlanComponent },
+  { path: 'what-if', component: WhatifComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

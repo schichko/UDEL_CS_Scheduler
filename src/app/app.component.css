@@ -27,3 +27,19 @@
   background-image: url("/assets/blue-bg.png");
   padding-bottom: 5%;
 }
+
+@media only screen and (max-width: 768px) {
+  .content {
+    display: flex;
+    max-width: 768px;
+    margin: 0 auto;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content-container {
+    background-image: url("/assets/blue-bg.png");
+    padding-bottom: 5%;
+  }
+}

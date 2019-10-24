@@ -11,6 +11,7 @@ import { PlanComponent } from './plan/plan.component';
 import { ConcentrationDropdownComponent } from './concentration-dropdown/concentration-dropdown.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { WhatifComponent } from './whatif/whatif.component';
 import { environment } from '../environments/environment';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { EmptyTermComponent } from './empty-term/empty-term.component';
@@ -25,6 +26,7 @@ import { EmptyTermComponent } from './empty-term/empty-term.component';
     ConcentrationDropdownComponent,
     HeaderComponent,
     FooterComponent,
+    WhatifComponent,
     UserInfoComponent,
     EmptyTermComponent
   ],

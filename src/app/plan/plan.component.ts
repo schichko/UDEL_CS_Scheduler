@@ -17,7 +17,7 @@ export class PlanComponent implements OnInit {
   }
 
   getPlan(planID: number) {
-    return this.http.get(`https://planner.cis.udel.edu:3002/api/plans/${planID}`).subscribe(plan => this.semesterPlan = plan);
+    return this.http.get(`http://localhost:3002/api/plans/${planID}`).subscribe(plan => this.semesterPlan = plan);
   }
 
   ngOnInit() {

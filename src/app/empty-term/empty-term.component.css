@@ -1,0 +1,14 @@
+.creditCount {
+    text-align: right;
+  }
+  
+.creditSize{
+    width:  50px;
+}
+
+.classButtonPos{
+  margin-left: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

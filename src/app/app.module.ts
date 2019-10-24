@@ -12,6 +12,9 @@ import { ConcentrationDropdownComponent } from './concentration-dropdown/concent
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { WhatifComponent } from './whatif/whatif.component';
+import { environment } from '../environments/environment';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { EmptyTermComponent } from './empty-term/empty-term.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { WhatifComponent } from './whatif/whatif.component';
     ConcentrationDropdownComponent,
     HeaderComponent,
     FooterComponent,
-    WhatifComponent
+    WhatifComponent,
+    UserInfoComponent,
+    EmptyTermComponent
   ],
   imports: [
     HttpClientModule,
@@ -32,6 +37,7 @@ import { WhatifComponent } from './whatif/whatif.component';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EmptyTermComponent]
 })
 export class AppModule { }

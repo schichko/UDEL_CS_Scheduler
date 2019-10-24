@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-whatif',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./whatif.component.css']
 })
 export class WhatifComponent implements OnInit {
+  planNames;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  getAllPlanNames(){
+    return this.http.get(`http://localhost:3002/api/plans/plan-names`).subscribe(planNames => this.planNames = planNames);
   }
 
+  ngOnInit() {
+    this.getAllPlanNames();
+  }
 }

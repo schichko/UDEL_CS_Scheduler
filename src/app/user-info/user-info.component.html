@@ -1,0 +1,21 @@
+
+<div id="semesterContainer" class="card-container" *ngFor="let element of terms">
+    <!-- <ng-container *ngComponentOutlet="element" ></ng-container> -->
+    <app-empty-term  semsester={{semesterCount}} startYear={{currentUserYear}} term ={{currentUserTerm}} class="card" (notify)="handleNotify($event)"></app-empty-term>
+</div>
+
+
+<td class= "year-data"> 
+    <select #myTerm id="term" class="drop-down">
+            <option value="Fall" >Fall</option>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+    </select> 
+    <select #myYear id="year" class = "margin-spacing"></select>
+    <button id = "newSemester" (click)= 'buttonPop(myYear.value,myTerm.value)' class="margin-spacing">Add Semester</button>
+</td>
+
+<div class = "submitButton">
+    <button id = "submitUserInfo" (click) ='submitData()'>Submit</button>
+</div>

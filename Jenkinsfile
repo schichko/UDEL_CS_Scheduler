@@ -5,19 +5,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                ng build --prod
+                sh 'npm install'
+                sh 'ng build --prod'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                ng test
+                sh 'ng test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}/${env.PATH}/
+                sh 'curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}/${env.PATH}/'
             }
         }
     }

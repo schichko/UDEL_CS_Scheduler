@@ -1,12 +1,26 @@
 pipeline {
   agent any
  
-  tools {nodejs "node"}
+  tools {
+    nodejs "node"
+  }
+
+  environment {
+    USERNAME = credentials('desthost-user')
+    PASSWORD = credentials('desthost-password')
+    DESTHOST = credentials('desthost')
+    PATH = credentials('deploy-path')
+  }
  
   stages {
-    stage('Example') {
+    stage('Install Node Dependencies') {
       steps {
-        sh 'npm config ls'
+        sh 'npm install'
+      }
+    }
+    stage('Build Angular Project') {
+      steps {
+        sh 'npm run build-production'
       }
     }
   }

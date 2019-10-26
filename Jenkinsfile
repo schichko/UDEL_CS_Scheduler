@@ -1,8 +1,6 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"}
-
     environment {
         USERNAME = credentials('desthost-user')
         PASSWORD = credentials('desthost-password')

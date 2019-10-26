@@ -4,7 +4,13 @@ pipeline {
             image 'node:alpine' 
             args '-p 3000:3000' 
         }
-
+    }
+    environment {
+        USERNAME     = credentials('desthost-user')
+        PASSWORD = credentials('desthost-password')
+        DESTHOST = credentials('desthost')
+        PATH = credentials('deploy-path')
+    }
     stages {
         stage('Build') {
             steps {
@@ -22,21 +28,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}/${env.PATH}/'
+                sh 'curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}${env.PATH}/'
             }
         }
     }
-    stage('Test') {
-      steps {
-        echo 'Testing..'
-        sh 'ng test'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying....'
-        sh 'curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}${env.PATH}/'
-      }
-    }
-  }
 }

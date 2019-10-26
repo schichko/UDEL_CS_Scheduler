@@ -28,13 +28,12 @@ pipeline {
                   noDefaultExcludes: true, 
                   patternSeparator: '[, ]+',  
                   remoteDirectorySDF: false, 
-                  removePrefix: '', 
+                  removePrefix: 'dist/planner', 
                   sourceFiles: 'dist/planner/**')
                   ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: true,
-                removePrefix: 'dist/planner'
+                verbose: true
                 )])
       }
     }

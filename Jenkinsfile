@@ -1,20 +1,23 @@
 pipeline {
   agent any
- 
-  tools {
-    nodejs "node"
-  }
- 
   stages {
-    stage('Install Node Dependencies') {
+    stage('Install Packages') {
       steps {
         sh 'npm install'
       }
     }
-    stage('Build Angular Project') {
+    stage('Build Angular') {
       steps {
         sh 'npm run build-production'
       }
     }
+    stage('Deploy') {
+      steps {
+        sshPublisher(alwaysPublishFromMaster: true)
+      }
+    }
+  }
+  tools {
+    nodejs 'node'
   }
 }

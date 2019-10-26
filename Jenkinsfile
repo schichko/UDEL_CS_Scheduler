@@ -20,16 +20,13 @@ pipeline {
               transfers: [
                 sshTransfer(
                   excludes: '', 
-                  execCommand: '', 
-                  execTimeout: 120000, 
                   flatten: false, 
                   makeEmptyDirs: false, 
                   noDefaultExcludes: false, 
-                  patternSeparator: '[, ]+', 
-                  remoteDirectory: '/var/www/html/secure/planner/', 
+                  patternSeparator: '[, ]+',  
                   remoteDirectorySDF: false, 
                   removePrefix: '', 
-                  sourceFiles: '/dist/planner/*')
+                  sourceFiles: './dist/planner/*')
                   ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 

@@ -14,6 +14,8 @@ pipeline {
     stage('Deploy') {
       steps {
         sshPublisher(
+          masterNodeName: '',
+          paramPublish: null,
           publishers: [
             sshPublisherDesc(
               configName: 'live-server', 
@@ -21,12 +23,13 @@ pipeline {
                 sshTransfer(
                   excludes: '', 
                   flatten: false, 
-                  makeEmptyDirs: false, 
-                  noDefaultExcludes: false, 
+                  cleanRemote: true,
+                  makeEmptyDirs: true, 
+                  noDefaultExcludes: true, 
                   patternSeparator: '[, ]+',  
                   remoteDirectorySDF: false, 
                   removePrefix: '', 
-                  sourceFiles: './dist/planner/*')
+                  sourceFiles: 'dist/planner/**')
                   ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 

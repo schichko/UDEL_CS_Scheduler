@@ -4,13 +4,6 @@ pipeline {
   tools {
     nodejs "node"
   }
-
-  environment {
-    USERNAME = credentials('desthost-user')
-    PASSWORD = credentials('desthost-password')
-    DESTHOST = credentials('desthost')
-    PATH = credentials('deploy-path')
-  }
  
   stages {
     stage('Install Node Dependencies') {

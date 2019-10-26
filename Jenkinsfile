@@ -13,7 +13,29 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sshPublisher(alwaysPublishFromMaster: true)
+        sshPublisher(
+          publishers: [
+            sshPublisherDesc(
+              configName: 'live-server', 
+              transfers: [
+                sshTransfer(
+                  excludes: '', 
+                  execCommand: '', 
+                  execTimeout: 120000, 
+                  flatten: false, 
+                  makeEmptyDirs: false, 
+                  noDefaultExcludes: false, 
+                  patternSeparator: '[, ]+', 
+                  remoteDirectory: '/var/www/html/secure/planner/', 
+                  remoteDirectorySDF: false, 
+                  removePrefix: '', 
+                  sourceFiles: '/dist/planner/*')
+                  ], 
+                usePromotionTimestamp: false, 
+                useWorkspaceInPromotion: false, 
+                verbose: true)
+                ]
+                )
       }
     }
   }

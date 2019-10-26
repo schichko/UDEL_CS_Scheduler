@@ -16,14 +16,20 @@ pipeline {
             steps {
                 echo 'Building..'
                 npm install
-                ng build --prod
+                npm build-production
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing..'
-                ng test
+                npm test
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
 

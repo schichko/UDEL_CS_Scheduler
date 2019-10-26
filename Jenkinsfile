@@ -29,7 +29,7 @@ pipeline {
                   patternSeparator: '[, ]+',  
                   remoteDirectorySDF: false, 
                   removePrefix: '', 
-                  sourceFiles: 'dist/planner/**')
+                  sourceFiles: 'dist/planner/*')
                   ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 

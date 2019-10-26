@@ -1,35 +1,13 @@
 pipeline {
-    agent any
-
-    environment {
-        USERNAME = credentials('desthost-user')
-        PASSWORD = credentials('desthost-password')
-        DESTHOST = credentials('desthost')
-        PATH = credentials('deploy-path')
+  agent any
+ 
+  tools {nodejs "node"}
+ 
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
     }
-
-    stages {
-
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                npm install
-                npm build-production
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                npm test
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-
-    }
+  }
 }

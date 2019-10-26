@@ -26,4 +26,17 @@ pipeline {
             }
         }
     }
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+        sh 'ng test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....'
+        sh 'curl --insecure --user ${env.USERNAME}:${env.PASSWORD} -T ./dist/* sftp://${env.DESTHOST}${env.PATH}/'
+      }
+    }
+  }
 }

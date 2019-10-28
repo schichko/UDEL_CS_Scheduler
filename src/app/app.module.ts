@@ -15,6 +15,7 @@ import { WhatifComponent } from './whatif/whatif.component';
 import { environment } from '../environments/environment';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { EmptyTermComponent } from './empty-term/empty-term.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EmptyTermComponent } from './empty-term/empty-term.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -12,7 +12,7 @@ export class WhatifComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   getAllPlanNames(){
-    return this.http.get(`http://localhost:3002/api/plans/plan-names`).subscribe(planNames => this.planNames = planNames);
+    return this.http.get(`http://localhost:3002/api/plan-names`).subscribe(planNames => this.planNames = planNames);
   }
 
   ngOnInit() {

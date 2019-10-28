@@ -1,9 +1,7 @@
 <div ng-app="myApp" ng-controller="myCtrl" class="concentrationContainer">
   <p id="concentrationText">Please select a concentration:
-    <select id="drop" ng-model="selectedConc" ng-options="x for x in conc">
-      <option value="1">AI</option>
-      <option value="2">Graphics</option>
-      <option value="3">Data Science</option>
-    </select>
+      <select [(ngModel)]="selectedPlan" (ngModelChange)="onChange($event)">
+        <option *ngFor="let planName of planNames" [value]="planName">{{planName}}</option>
+      </select>
   </p>
 </div>
